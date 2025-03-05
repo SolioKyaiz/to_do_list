@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "to-do-list"
+version = "0.1.0"
+description = ""
+authors = ["darygul2022icloud.com <darya82>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+django = "^5.1.6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

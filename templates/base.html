@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}To-Do List{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <!-- Improved font imports -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&family=JetBrains+Mono:wght@400&display=swap">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'tasks:task-list' %}">Мои задачи</a></li>
+                    <li><a href="{% url 'tasks:task-create' %}">Добавить задачу</a></li>
+                    <li><a href="#">Завершённые</a></li>
+                    <li><a href="#">Профиль</a></li>
+                    <li><a href="{% url 'account:logout' %}">Выйти</a></li>
+                {% else %}
+                    <li><a href="{% url 'account:login' %}">Войти</a></li>
+                    <li><a href="{% url 'account:register' %}">Регистрация</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>© 2025 To-Do List. Все права защищены.</p>
+    </footer>
+</body>
+</html>

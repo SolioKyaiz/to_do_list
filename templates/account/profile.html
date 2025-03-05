@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %}Профиль - {{ user.first_name }} {{ user.last_name }}{% endblock %}
+
+{% block content %}
+    <div class="profile-container">
+        <div class="profile-header">
+            <h1>Профиль пользователя: {{ user.first_name }} {{ user.last_name }}</h1>
+            <p>Email: {{ user.email }}</p>
+            <p>Возраст: {{ user.age }}</p>
+            <p>Дата регистрации: {{ user.created_at|date:"d M Y" }}</p>
+            <a href="{% url 'account:password-change' %}" class="profile-btn">Изменить пароль</a>
+            <a href="{% url 'account:profile-edit' %}" class="profile-btn">Редактировать профиль</a>
+        </div>
+
+        <div class="profile-posts">
+            <h2>Мои статьи</h2>
+            {% if user.posts.all %}
+                <ul>
+                    {% for post in user.posts.all %}
+                        <li>
+                            <a href="{% url 'blog:post-detail' post.id %}">{{ post.title }}</a>
+                            <span class="post-date">{{ post.created_at|date:"d M Y" }}</span>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>У вас пока нет статей.</p>
+            {% endif %}
+        </div>
+
+        <div class="profile-bookmarks">
+            <h2>Закладки</h2>
+            {% if user.bookmarks.all %}
+                <ul>
+                    {% for post in user.bookmarks.all %}
+                        <li>
+                            <a href="{% url 'blog:post-detail' post.id %}">{{ post.title }}</a>
+                            <span class="post-date">{{ post.created_at|date:"d M Y" }}</span>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>У вас пока нет закладок.</p>
+            {% endif %}
+        </div>
+
+        <div class="profile-likes">
+            <h2>Понравившиеся статьи</h2>
+            {% if user.likes.all %}
+                <ul>
+                    {% for post in user.likes.all %}
+                        <li>
+                            <a href="{% url 'blog:post-detail' post.id %}">{{ post.title }}</a>
+                            <span class="post-date">{{ post.created_at|date:"d M Y" }}</span>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>У вас пока нет понравившихся статей.</p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
