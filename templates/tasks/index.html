@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
+{% block title %} Главная {% endblock title %}
 
-{% block content %}
+{% block content%}
+{% include 'includes/search.html' %}
 <h2>Мои задачи</h2>
 
 <a href="{% url 'tasks:task-create' %}" class="btn">Добавить задачу</a>
@@ -38,4 +40,4 @@
 {% else %}
 <p>Нет задач.</p>
 {% endif %}
-{% endblock content %}
+{% endblock content%}

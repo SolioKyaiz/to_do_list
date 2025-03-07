@@ -1,0 +1,144 @@
+<div class="form-wrapper">
+    <form method="get" id="filter-form">
+        <input type="text" name="q" value="{{ query }}" placeholder="Поиск по задаче">
+        <button type="submit">Поиск</button>
+    </form>
+
+    <form method="get">
+        <label>Фильтр:</label>
+        <select name="status">
+            <option value="">Все статусы</option>
+            <option value="todo" {% if status_filter == 'todo' %}selected{% endif %}>To Do</option>
+            <option value="in_progress" {% if status_filter == 'in_progress' %}selected{% endif %}>In Progress</option>
+            <option value="in_review" {% if status_filter == 'in_review' %}selected{% endif %}>In Review</option>
+            <option value="done" {% if status_filter == 'done' %}selected{% endif %}>Done</option>
+        </select>
+
+        <select name="deadline">
+            <option value="">Все сроки</option>
+            <option value="overdue" {% if deadline_filter == 'overdue' %}selected{% endif %}>Просроченные</option>
+            <option value="today" {% if deadline_filter == 'today' %}selected{% endif %}>Сегодня</option>
+            <option value="week" {% if deadline_filter == 'week' %}selected{% endif %}>На неделю</option>
+        </select>
+
+        <select name="sort">
+            <option value="deadline" {% if sort_by == 'deadline' %}selected{% endif %}>По дедлайну</option>
+            <option value="priority" {% if sort_by == 'priority' %}selected{% endif %}>По приоритету</option>
+        </select>
+
+        <button type="submit">Применить</button>
+    </form>
+</div>
+
+{% block extra_css %}
+    <style>
+
+
+        /* Search Form */
+        #filter-form {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        #filter-form input[type="text"] {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #d0d0d0;
+            border-radius: 4px;
+            font-family: 'Manrope', sans-serif;
+            font-size: 14px;
+            color: #333333;
+            background: #fafafa;
+            transition: border-color 0.2s ease;
+        }
+
+        #filter-form input[type="text"]:focus {
+            border-color: #34c759;
+            outline: none;
+            box-shadow: 0 0 4px rgba(52, 199, 89, 0.2);
+        }
+
+        #filter-form button {
+            padding: 8px 12px;
+            background: #34c759;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            font-family: 'Manrope', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        #filter-form button:hover {
+            background: #2eb04d;
+        }
+
+        /* Filter/Sort Form */
+        form:nth-child(2) {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        form:nth-child(2) label {
+            font-family: 'Manrope', sans-serif;
+            color: #333333;
+            font-size: 14px;
+            margin-right: 5px;
+        }
+
+        form:nth-child(2) select {
+            padding: 8px;
+            border: 1px solid #d0d0d0;
+            border-radius: 4px;
+            font-family: 'Manrope', sans-serif;
+            font-size: 14px;
+            color: #333333;
+            background: #fafafa;
+            transition: border-color 0.2s ease;
+        }
+
+        form:nth-child(2) select:focus {
+            border-color: #34c759;
+            outline: none;
+            box-shadow: 0 0 4px rgba(52, 199, 89, 0.2);
+        }
+
+        form:nth-child(2) button {
+            padding: 8px 12px;
+            background: #34c759;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            font-family: 'Manrope', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        form:nth-child(2) button:hover {
+            background: #2eb04d;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .form-wrapper {
+                padding: 15px;
+            }
+            #filter-form, form:nth-child(2) {
+                flex-direction: column;
+                gap: 8px;
+            }
+            #filter-form input[type="text"], #filter-form button,
+            form:nth-child(2) select, form:nth-child(2) button {
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+{% endblock %}
