@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Вход - Мой Блог{% endblock %}
 
@@ -7,7 +8,13 @@
         <h2>Вход</h2>
         <form method="post">
             {% csrf_token %}
-            {{ form.as_p }}
+            <!-- Override default labels to match image -->
+            {% for field in form %}
+                <div class="form-group">
+                    <label for="{{ field.id_for_label }}">{{ field.label }}:</label>
+                    {{ field }}
+                </div>
+            {% endfor %}
             <button type="submit" class="auth-btn">Войти</button>
         </form>
         <p>Еще нет аккаунта? <a href="{% url 'account:register' %}">Зарегистрируйтесь</a></p>

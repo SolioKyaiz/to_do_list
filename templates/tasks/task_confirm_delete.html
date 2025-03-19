@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %} Потверждение Удаление {% endblock title %}
+{% block content %}
+    <div class="confirm-delete-container">
+        <h2>Удалить задачу</h2>
+        <p>Вы уверены, что хотите удалить задачу "<strong>{{ task.title }}</strong>"?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="delete-btn">Да, удалить</button>
+            <a href="{% url 'home' %}" class="cancel-btn">Отмена</a>
+        </form>
+    </div>
+{% endblock %}

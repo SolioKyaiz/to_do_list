@@ -55,8 +55,8 @@ class Task(models.Model):
         return self.title
 
     class Meta:
-        ordering = ['deadline'],
-        verbose_name = "Задача",
+        ordering = ['deadline']
+        verbose_name = "Задача"
         verbose_name_plural = "Задачи"
 
 

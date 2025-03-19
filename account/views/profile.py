@@ -3,11 +3,13 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
 from account.models import User
 from account.forms import ProfileForm
+from tasks.models import Task
 
 @login_required
 def profile(request):
     user = request.user
-    return render(request,'account/profile.html',{'user':user})
+    tasks = user.tasks.all()
+    return render(request,'account/profile.html',{'user':user,'tasks':tasks})
 
 @login_required
 def edit_profile(request):

@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
-{% block title %} Главная {% endblock title %}
-
-{% block content%}
-{% include 'includes/search.html' %}
-<a href="{% url 'tasks:task-create' %}" class="btn">Добавить задачу</a>
-
-{% if tasks %}
+{% block title %} Завершенные {% endblock title %}
+{% block content %}
+<div class="filter-container">
+<form method="get" id="search-form" class="filter-group">
+    <input type="text" name="q" value="{{ query }}" placeholder="Поиск по задаче">
+    <button type="submit">Поиск</button>
+</form>
+</div>
 <table class="task-table">
     <thead>
     <tr>
@@ -19,7 +20,7 @@
     </tr>
     </thead>
     <tbody>
-    {% for task in tasks %}
+    {% for task in complete_tasks %}
 
     <tr>
         <td>{{ task.title }}</td>
@@ -35,7 +36,5 @@
     {% endfor %}
     </tbody>
 </table>
-{% else %}
-<p>Нет задач.</p>
-{% endif %}
-{% endblock content%}
+{% endblock content %}
+

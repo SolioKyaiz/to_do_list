@@ -61,6 +61,213 @@ main {
     border: 1px solid #e0e0e0;
 }
 
+/* Auth Container */
+.auth-container {
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    padding: 30px; /* Increased padding to match image */
+    margin: 50px auto; /* Increased margin for better spacing */
+    border: 1px solid #e0e0e0;
+    width: 100%;
+    max-width: 400px; /* Match image width */
+    text-align: center;
+}
+
+.auth-container h2 {
+    font-size: 28px; /* Larger font to match bold "Вход" */
+    font-weight: 700; /* Bolder weight */
+    color: #333333;
+    margin-bottom: 30px; /* More spacing below heading */
+    text-transform: uppercase; /* Match the all-caps style */
+}
+
+/* Auth Form Group */
+.form-group {
+    margin-bottom: 20px; /* Spacing between fields */
+    text-align: left; /* Align labels left */
+}
+
+.form-group label {
+    display: block; /* Ensure labels are on their own line */
+    font-size: 14px;
+    color: #333333;
+    margin-bottom: 5px; /* Space between label and input */
+    font-family: 'Manrope', sans-serif;
+}
+
+.auth-container form input[type="text"],
+.auth-container form input[type="password"] {
+    padding: 12px; /* Slightly larger padding to match image */
+    border: 1px solid #d0d0d0;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: 'Manrope', sans-serif;
+    background: #fafafa;
+    color: #333333;
+    transition: border-color 0.2s ease;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left; /* Align text left inside inputs */
+}
+
+.auth-container form input[type="text"]:focus,
+.auth-container form input[type="password"]:focus {
+    border-color: #34c759;
+    outline: none;
+    box-shadow: 0 0 6px rgba(52, 199, 89, 0.2);
+}
+
+/* Auth Button */
+.auth-btn {
+    background: #34c759;
+    color: #ffffff;
+    border: none;
+    padding: 12px 30px; /* Larger padding to match button width */
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Manrope', sans-serif;
+    transition: all 0.2s ease;
+    width: 100%;
+    max-width: 200px; /* Match image button width */
+    margin: 20px auto 0; /* Center and add top margin */
+}
+
+.auth-btn:hover {
+    background: #2eb04d;
+}
+
+/* Auth Links */
+.auth-container p {
+    margin-top: 20px; /* More spacing above links */
+    font-size: 14px;
+    color: #666666;
+    text-align: center;
+}
+
+.auth-container a {
+    color: #34c759;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+    margin-left: 5px; /* Slight spacing between text and link */
+}
+
+.auth-container a:hover {
+    color: #2eb04d;
+}
+
+/* Form Wrapper */
+.form-wrapper {
+    margin: 20px 0;
+}
+
+/* Filter Container for Horizontal Layout */
+.filter-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    align-items: center; /* Center the forms */
+}
+
+/* Filter Group (individual form styling) */
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center; /* Center content within each form */
+    width: 100%;
+    max-width: 800px; /* Match main width for consistency */
+}
+
+/* Filter Row for Inputs */
+.filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: center; /* Center items within the row */
+    width: 100%;
+}
+
+/* Specific styling for search form */
+#search-form .filter-row {
+    width: 100%;
+    justify-content: center; /* Ensure search input is centered */
+}
+
+#search-form input[type="text"] {
+    padding: 10px;
+    border: 1px solid #d0d0d0;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: 'Manrope', sans-serif;
+    background: #fafafa;
+    color: #333333;
+    transition: border-color 0.2s ease;
+    width: 100%;
+    max-width: 300px; /* Wider for search input */
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#search-form input[type="text"]:focus {
+    border-color: #34c759;
+    outline: none;
+    box-shadow: 0 0 6px rgba(52, 199, 89, 0.2);
+}
+
+#search-form button {
+    width: auto; /* Allow button to size based on content */
+    min-width: 120px; /* Minimum width for consistency */
+}
+
+/* Specific styling for filters form */
+#filters-form .filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+    justify-content: center; /* Center filter inputs */
+}
+
+#filters-form label {
+    font-family: 'Manrope', sans-serif;
+    color: #333333;
+    font-size: 14px;
+    white-space: nowrap;
+    margin-right: 5px;
+}
+
+#filters-form select {
+    padding: 10px;
+    border: 1px solid #d0d0d0;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: 'Manrope', sans-serif;
+    background: #fafafa;
+    color: #333333;
+    transition: border-color 0.2s ease;
+    flex: 1;
+    max-width: 150px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#filters-form select:focus {
+    border-color: #34c759;
+    outline: none;
+    box-shadow: 0 0 6px rgba(52, 199, 89, 0.2);
+}
+
+#filters-form button {
+    width: auto; /* Allow button to size based on content */
+    min-width: 120px; /* Minimum width for consistency */
+}
+
 /* Стили для формы */
 form {
     display: flex;
@@ -69,22 +276,8 @@ form {
     margin-bottom: 20px;
 }
 
-input {
-    width: 100%;
-    padding: 10px; /* Increased padding */
-    border: 1px solid #d0d0d0;
-    border-radius: 4px;
-    font-size: 14px;
-    font-family: 'JetBrains Mono', monospace;
-    background: #fafafa;
-    color: #333333;
-    transition: border-color 0.2s ease;
-}
-
-input:focus {
-    border-color: #34c759;
-    outline: none;
-    box-shadow: 0 0 6px rgba(52, 199, 89, 0.2); /* Slightly larger shadow */
+form p {
+    margin: 0; /* Remove default paragraph margin */
 }
 
 /* Стили для кнопки */
@@ -99,13 +292,16 @@ button {
     font-weight: 600;
     font-family: 'Manrope', sans-serif;
     transition: all 0.2s ease;
+    white-space: nowrap; /* Prevent button text wrapping */
+    box-sizing: border-box; /* Include padding in width calculation */
+    text-align: center; /* Center the button text */
 }
 
 button:hover {
     background: #2eb04d;
 }
 
-/* Стили для таблицы задач (replacing .todo-list) */
+/* Стили для таблицы задач */
 .task-table {
     width: 100%;
     border-collapse: separate; /* Allows spacing between borders */
@@ -113,10 +309,11 @@ button:hover {
     margin-top: 20px;
 }
 
-.task-table th, .task-table td {
+.task-table th,
+.task-table td {
     border: 1px solid #e0e0e0; /* Lighter border */
     padding: 12px; /* Increased padding */
-    text-align: left;
+    text-align: left; /* Keep table content left-aligned unless changed */
     background: #ffffff; /* Ensure background for better contrast */
 }
 
@@ -135,8 +332,13 @@ button:hover {
     margin-left: 8px;
 }
 
-.task-table th .sort-indicator.asc { border-bottom: 5px solid #000; }
-.task-table th .sort-indicator.desc { border-top: 5px solid #000; }
+.task-table th .sort-indicator.asc {
+    border-bottom: 5px solid #000;
+}
+
+.task-table th .sort-indicator.desc {
+    border-top: 5px solid #000;
+}
 
 .task-table tbody tr {
     transition: all 0.2s ease;
@@ -168,6 +370,42 @@ a:hover {
     color: #2eb04d;
 }
 
+/* Стили для кнопок */
+.btn {
+    padding: 5px 10px;
+    color: green;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center; /* Center text in buttons */
+    background-color: lemonchiffon;
+}
+
+.btn-primary {
+    background-color: lemonchiffon;
+}
+
+.btn-primary:hover {
+    background-color: #E6F0DC;
+}
+
+.btn-danger {
+    background-color: #FF003F;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    color: white;
+}
+
+/* Стили для пустого состояния */
+p {
+    font-family: 'Manrope', sans-serif;
+    color: #666666;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
 /* Стили для футера */
 footer {
     text-align: center;
@@ -187,17 +425,284 @@ footer {
         margin: 20px;
         padding: 15px;
     }
+    .form-wrapper {
+        padding: 15px;
+    }
     .filter-container {
-        flex-direction: column;
         gap: 10px;
     }
-    .filter-group {
-        width: 100%;
+    .filter-row {
+        flex-direction: column;
+        align-items: center;
     }
-    .task-table th, .task-table td {
+    .filter-row label {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+    #search-form input[type="text"],
+    #filters-form select {
+        width: 100%;
+        max-width: none;
+    }
+    #filters-form .filter-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    .filter-group button {
+        width: 100%;
+        margin-top: 10px;
+    }
+    .task-table th,
+    .task-table td {
         padding: 8px;
     }
+    .auth-container {
+        width: 90%;
+        padding: 15px;
+    }
+    .auth-btn {
+        max-width: none;
+    }
 }
 
 
+
+/* Container for email*/
+.auth-container form input[type="text"], .auth-container form input[type="email"] {
+    padding: 12px;
+    border: 1px solid #d0d0d0;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: 'Manrope', sans-serif;
+    background: #fafafa;
+    color: #333333;
+    transition: border-color 0.2sease;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
 }
+
+
+
+
+
+
+
+/* Confirm Delete Container */
+.confirm-delete-container {
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    padding: 30px;
+    margin: 50px auto;
+    border: 1px solid #e0e0e0;
+    width: 100%;
+    max-width: 400px; /* Match auth-container width */
+    text-align: center;
+}
+
+.confirm-delete-container h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333333;
+    margin-bottom: 20px;
+    text-transform: uppercase; /* Consistent with auth-container */
+}
+
+.confirm-delete-container p {
+    font-size: 16px;
+    color: #333333;
+    margin-bottom: 30px;
+}
+
+.confirm-delete-container form {
+    display: flex;
+    flex-direction: row; /* Buttons in a row */
+    gap: 15px;
+    justify-content: center; /* Center buttons */
+}
+
+/* Delete Button */
+.delete-btn {
+    background: #dc3545; /* Red for destructive action */
+    color: #ffffff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Manrope', sans-serif;
+    transition: all 0.2s ease;
+    width: auto;
+    min-width: 120px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.delete-btn:hover {
+    background: #c82333; /* Darker red on hover */
+}
+
+/* Cancel Button (Link) */
+.cancel-btn {
+    display: inline-block;
+    background: #e0e0e0; /* Neutral gray */
+    color: #333333;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Manrope', sans-serif;
+    transition: all 0.2s ease;
+    width: auto;
+    min-width: 120px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.cancel-btn:hover {
+    background: #d0d0d0; /* Slightly darker gray on hover */
+}
+
+/* Task Form Container */
+.task-form-container {
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    padding: 30px;
+    margin: 50px auto;
+    border: 1px solid #e0e0e0;
+    width: 100%;
+    max-width: 500px; /* Slightly wider than auth-container for form fields */
+    text-align: center;
+}
+
+.task-form-container h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333333;
+    margin-bottom: 30px;
+    text-transform: uppercase; /* Consistent with other headings */
+}
+
+/* Error Message */
+.error-message {
+    color: #dc3545; /* Red for errors */
+    font-size: 14px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Task Form Inputs */
+.task-form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.task-form-container form p {
+    margin: 0;
+    text-align: left; /* Align labels left */
+}
+
+.task-form-container form label {
+    display: block;
+    font-size: 14px;
+    color: #333333;
+    margin-bottom: 5px;
+    font-family: 'Manrope', sans-serif;
+}
+
+.task-form-container form input[type="text"],
+.task-form-container form input[type="date"],
+.task-form-container form select {
+    padding: 12px;
+    border: 1px solid #d0d0d0;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: 'Manrope', sans-serif;
+    background: #fafafa;
+    color: #333333;
+    transition: border-color 0.2s ease;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.task-form-container form input[type="text"]:focus,
+.task-form-container form input[type="date"]:focus,
+.task-form-container form select:focus {
+    border-color: #34c759;
+    outline: none;
+    box-shadow: 0 0 6px rgba(52, 199, 89, 0.2);
+}
+
+.profile-container {
+    background: #ffffff;
+
+    width: 100%;
+    max-width: 800px; /* Match main container width */
+}
+
+/* Profile Header */
+.profile-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.profile-header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Profile Info */
+.profile-info {
+    margin-bottom: 30px;
+}
+
+.profile-info p {
+    font-size: 16px;
+    color: #333333;
+    margin: 10px 0;
+}
+
+.profile-info p strong {
+    font-weight: 600;
+    color: #333333;
+}
+
+/* Profile Actions */
+.profile-actions {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: center;
+}
+
+.profile-btn {
+    padding: 12px 30px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Manrope', sans-serif;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    min-width: 150px;
+    text-align: center;
+}
+
+/* Profile Tasks */
+.profile-tasks h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333333;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+

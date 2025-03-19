@@ -9,11 +9,11 @@ class RegistrationForm(UserCreationForm):
         widget=forms.EmailInput(attrs={'class':'form-control','placeholder':'Email'})
     )
     first_name = forms.CharField(
-        required=True,
+        required=False,
         widget=forms.TextInput(attrs={'class':'form-control','placeholder':'First_name'})
     )
     last_name = forms.CharField(
-        required=True,
+        required=False,
         widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Last_name'})
     )
     password1 = forms.CharField(

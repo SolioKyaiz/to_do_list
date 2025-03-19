@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}To-Do List{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <!-- Improved font imports -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&family=JetBrains+Mono:wght@400&display=swap">
 </head>
 <body>
@@ -16,8 +15,8 @@
                 {% if user.is_authenticated %}
                     <li><a href="{% url 'home' %}">Мои задачи</a></li>
                     <li><a href="{% url 'tasks:task-create' %}">Добавить задачу</a></li>
-                    <li><a href="#">Завершённые</a></li>
-                    <li><a href="#">Профиль</a></li>
+                    <li><a href="{% url 'tasks:completed-tasks'%}">Завершённые</a></li>
+                    <li><a href="{% url 'account:profile' %}">Профиль</a></li>
                     <li><a href="{% url 'account:logout' %}">Выйти</a></li>
                 {% else %}
                     <li><a href="{% url 'account:login' %}">Войти</a></li>
